@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF651990-AD0B-487C-AC44-D45CC24973AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sys.DataCollection.Common</RootNamespace>
+    <AssemblyName>Sys.DataCollection.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basic.Framework">
+      <HintPath>..\..\01-Library\Basic.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\ICacheManager.cs" />
+    <Compile Include="Commands\CommandCodes.cs" />
+    <Compile Include="Commands\DeviceResetCommand.cs" />
+    <Compile Include="Commands\MasCommand.cs" />
+    <Compile Include="Driver\Events\DelegateEvent.cs" />
+    <Compile Include="Driver\Events\DriverCommandEventArgs.cs" />
+    <Compile Include="Driver\Events\CommunicationStateChangeArgs.cs" />
+    <Compile Include="Driver\Events\DriverEventArgs.cs" />
+    <Compile Include="Driver\Events\NetDataEventCreatedArgs.cs" />
+    <Compile Include="Driver\Events\ProtocolDataCreatedEventArgs.cs" />
+    <Compile Include="Driver\ICoreBllDriver.cs" />
+    <Compile Include="Driver\IDeviceDriver.cs" />
+    <Compile Include="Protocols\BroadCast\EndPaTaskRequest.cs" />
+    <Compile Include="Protocols\BroadCast\EndPaTaskResponse.cs" />
+    <Compile Include="Protocols\BroadCast\Event\CallEndResponse.cs" />
+    <Compile Include="Protocols\BroadCast\Event\CallStartResponse.cs" />
+    <Compile Include="Protocols\BroadCast\Event\TermCallResponse.cs" />
+    <Compile Include="Protocols\BroadCast\Event\TermRegResponse.cs" />
+    <Compile Include="Protocols\BroadCast\LoginResponse.cs" />
+    <Compile Include="Protocols\BroadCast\MusicInfo.cs" />
+    <Compile Include="Protocols\BroadCast\RefreshResponse.cs" />
+    <Compile Include="Protocols\BroadCast\RefreshRequest.cs" />
+    <Compile Include="Protocols\BroadCast\LoginRequest.cs" />
+    <Compile Include="Protocols\BroadCast\StartPaTtsTaskRequest.cs" />
+    <Compile Include="Protocols\BroadCast\StartPaMusicTaskRequest.cs" />
+    <Compile Include="Protocols\BroadCast\StartPaTtsTaskResponse.cs" />
+    <Compile Include="Protocols\BroadCast\StartPaMusicTaskResponse.cs" />
+    <Compile Include="Protocols\BroadCast\StartPaVoiceTaskResponse.cs" />
+    <Compile Include="Protocols\BroadCast\PlayListMusicControlResponse.cs" />
+    <Compile Include="Protocols\BroadCast\PlayListMusicControlRequest.cs" />
+    <Compile Include="Protocols\BroadCast\PlayListControlResponse.cs" />
+    <Compile Include="Protocols\BroadCast\PlayListControlRequest.cs" />
+    <Compile Include="Protocols\BroadCast\MusicControlResponse.cs" />
+    <Compile Include="Protocols\BroadCast\MusicControlRequest.cs" />
+    <Compile Include="Protocols\BroadCast\MonitorCallResponse.cs" />
+    <Compile Include="Protocols\BroadCast\MonitorCallRequest.cs" />
+    <Compile Include="Protocols\BroadCast\HangupCallRequest.cs" />
+    <Compile Include="Protocols\BroadCast\MakeCallRequest.cs" />
+    <Compile Include="Protocols\BroadCast\HangupCallResponse.cs" />
+    <Compile Include="Protocols\BroadCast\MakeCallResponse.cs" />
+    <Compile Include="Protocols\BroadCast\StartPaVoiceTaskRequest.cs" />
+    <Compile Include="Protocols\BroadCast\TerminalQueryRequest.cs" />
+    <Compile Include="Protocols\BroadCast\TerminalQueryResponse.cs" />
+    <Compile Include="Protocols\BroadCast\TerminalControlResponse.cs" />
+    <Compile Include="Protocols\BroadCast\TerminalControlRequest.cs" />
+    <Compile Include="Protocols\BroadCast\PartitionControlResponse.cs" />
+    <Compile Include="Protocols\BroadCast\PartitionControlRequest.cs" />
+    <Compile Include="Protocols\BroadCast\TermListInfo.cs" />
+    <Compile Include="Protocols\BroadCast\TermInfo.cs" />
+    <Compile Include="Protocols\Business\HeartbeatRequest.cs" />
+    <Compile Include="Protocols\Business\QueryCacheDataRequest.cs" />
+    <Compile Include="Protocols\Business\Info\CacheItemInfo.cs" />
+    <Compile Include="Protocols\Business\Info\DeviceAcrossControlInfo.Build.cs" />
+    <Compile Include="Protocols\Business\Info\DeviceAcrossControlInfo.cs" />
+    <Compile Include="Protocols\Business\Info\DeviceInfo.Build.cs" />
+    <Compile Include="Protocols\Business\Info\DeviceInfo.cs" />
+    <Compile Include="Protocols\Business\Info\DeviceTypeInfo.Build.cs" />
+    <Compile Include="Protocols\Business\Info\DeviceTypeInfo.cs" />
+    <Compile Include="Protocols\Business\Info\NetworkDeviceInfo.Build.cs" />
+    <Compile Include="Protocols\Business\Info\NetworkDeviceInfo.cs" />
+    <Compile Include="Protocols\Business\QueryCacheDataResponse.cs" />
+    <Compile Include="Protocols\Business\UpdateCacheDataRequest.cs" />
+    <Compile Include="Protocols\Devices\C2000BaseStruct.cs" />
+    <Compile Include="Protocols\Devices\CallPersonRequest.cs" />
+    <Compile Include="Protocols\Devices\DeviceControlRequest.cs" />
+    <Compile Include="Protocols\Devices\DeviceControlResponse.cs" />
+    <Compile Include="Protocols\Devices\DeviceInitializeRequest.cs" />
+    <Compile Include="Protocols\Devices\DeviceProtocol.cs" />
+    <Compile Include="Protocols\Devices\GetDeviceInformationRequest.cs" />
+    <Compile Include="Protocols\Devices\GetDeviceInformationResponse.cs" />
+    <Compile Include="Protocols\Devices\GetSwitchboardParamCommRequest.cs" />
+    <Compile Include="Protocols\Devices\GetSwitchboardParamCommResponse.cs" />
+    <Compile Include="Protocols\Devices\ModificationDeviceAdressRequest.cs" />
+    <Compile Include="Protocols\Devices\ModificationDeviceAdressResponse.cs" />
+    <Compile Include="Protocols\Devices\InitializeRequest.cs" />
+    <Compile Include="Protocols\Devices\InitializeResponse.cs" />
+    <Compile Include="Protocols\Devices\NetworkDeviceDataRequest.cs" />
+    <Compile Include="Protocols\Devices\QueryBatteryRealDataRequest.cs" />
+    <Compile Include="Protocols\Devices\QueryBatteryRealDataResponse.cs" />
+    <Compile Include="Protocols\Devices\QueryHistoryControlRequest.cs" />
+    <Compile Include="Protocols\Devices\QueryHistoryControlResponse.cs" />
+    <Compile Include="Protocols\Devices\QueryHistoryRealDataRequest.cs" />
+    <Compile Include="Protocols\Devices\QueryHistoryRealDataResponse.cs" />
+    <Compile Include="Protocols\Devices\QueryRealDataRequest.cs" />
+    <Compile Include="Protocols\Devices\QueryRealDataResponse.cs" />
+    <Compile Include="Protocols\Devices\ResetDeviceCommandRequest.cs" />
+    <Compile Include="Protocols\Devices\ResetDeviceCommandResponse.cs" />
+    <Compile Include="Protocols\Devices\QuerytNetworkDeviceParamRequest.cs" />
+    <Compile Include="Protocols\Devices\QuerytNetworkDeviceParamResponse.cs" />
+    <Compile Include="Protocols\Devices\SearchNetworkDeviceRequest.cs" />
+    <Compile Include="Protocols\Devices\SearchNetworkDeviceResponse.cs" />
+    <Compile Include="Protocols\Devices\SensorSerialnetModeRequest.cs" />
+    <Compile Include="Protocols\Devices\SensorSerialnetModeResponse.cs" />
+    <Compile Include="Protocols\Devices\SetNetworkDeviceParamResponse.cs" />
+    <Compile Include="Protocols\Devices\SetNetworkDeviceParamRequest.cs" />
+    <Compile Include="Protocols\Devices\SetSensorGradingAlarmRequest.cs" />
+    <Compile Include="Protocols\Devices\SetSensorGradingAlarmResponse.cs" />
+    <Compile Include="Protocols\Devices\TimeSynchronizationRequest.cs" />
+    <Compile Include="Protocols\Enums\ItemCallState.cs" />
+    <Compile Include="Protocols\Enums\DirectionType.cs" />
+    <Compile Include="Protocols\Enums\ItemDevProperty.cs" />
+    <Compile Include="Protocols\Enums\ItemState.cs" />
+    <Compile Include="Protocols\Enums\ProtocolType.cs" />
+    <Compile Include="Protocols\MasProtocol.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocols\Enums\SystemType.cs" />
+    <Compile Include="Protocols\StationUpdate\GetStationUpdateStateRequest.cs" />
+    <Compile Include="Protocols\StationUpdate\GetStationUpdateStateResponse.cs" />
+    <Compile Include="Protocols\StationUpdate\ReductionRequest.cs" />
+    <Compile Include="Protocols\StationUpdate\ReductionResponse.cs" />
+    <Compile Include="Protocols\StationUpdate\UpdateCancleResponse.cs" />
+    <Compile Include="Protocols\StationUpdate\UpdateCancleRequest.cs" />
+    <Compile Include="Protocols\StationUpdate\SendUpdateBufferRequest.cs" />
+    <Compile Include="Protocols\StationUpdate\RestartRequest.cs" />
+    <Compile Include="Protocols\StationUpdate\InspectionRequest.cs" />
+    <Compile Include="Protocols\StationUpdate\RestartResponse.cs" />
+    <Compile Include="Protocols\StationUpdate\StationUpdateRequest.cs" />
+    <Compile Include="Protocols\StationUpdate\InspectionResponse.cs" />
+    <Compile Include="Protocols\StationUpdate\StationUpdateResponse.cs" />
+    <Compile Include="Rpc\GatewayRpcRequest.cs" />
+    <Compile Include="Rpc\GatewayRpcResponse.cs" />
+    <Compile Include="Rpc\RequestType.cs" />
+    <Compile Include="Utils\CommandUtil.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

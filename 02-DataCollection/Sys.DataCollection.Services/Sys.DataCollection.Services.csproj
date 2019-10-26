@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DFCC476-63D8-4982-8FE5-EDEB4E402A14}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sys.DataCollection.Services</RootNamespace>
+    <AssemblyName>Sys.DataCollection.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basic.Framework">
+      <HintPath>..\..\01-Library\Basic.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessManager\BroadCastBusinessManager.cs" />
+    <Compile Include="Cache\CacheManager.cs" />
+    <Compile Include="Cache\CacheManagerEx.cs" />
+    <Compile Include="Communications\CommunicationFactory.cs" />
+    <Compile Include="Communications\Provider\C8962Provider\SocketTcpClientCommunication.cs" />
+    <Compile Include="Communications\Provider\HttpProvider\HttpCommunication.cs" />
+    <Compile Include="Communications\Provider\C8962Provider\C8962UdpCommunication.cs" />
+    <Compile Include="Communications\Provider\MasProvider\MasCommunication.cs" />
+    <Compile Include="Driver\DriverManager.cs" />
+    <Compile Include="GatewayService.cs" />
+    <Compile Include="Communications\Provider\C8962Provider\C8962Communication.cs" />
+    <Compile Include="Communications\CommunicationManager.cs" />
+    <Compile Include="Communications\CommunicationType.cs" />
+    <Compile Include="Communications\Provider\HongDianProvider\HongDianCommunication.cs" />
+    <Compile Include="Communications\ICommunication.cs" />
+    <Compile Include="Log\LogManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rpc\HeartbeatManager.cs" />
+    <Compile Include="Rpc\RpcManager.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DC.Communication\DC.Communication.Components.csproj">
+      <Project>{a612852a-489d-4e3d-b5b3-ce9846199ed3}</Project>
+      <Name>DC.Communication.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sys.DataCollection.Common\Sys.DataCollection.Common.csproj">
+      <Project>{af651990-ad0b-487c-ac44-d45cc24973ab}</Project>
+      <Name>Sys.DataCollection.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sys.DataCollection.WebApiAgent\Sys.DataCollection.WebApiAgent.csproj">
+      <Project>{4f6d6359-400b-46c8-9685-eb0fe24bc766}</Project>
+      <Name>Sys.DataCollection.WebApiAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sys.DataCollection.WebApi\Sys.DataCollection.WebApi.csproj">
+      <Project>{490236c1-868b-4cf0-83ca-c53020851579}</Project>
+      <Name>Sys.DataCollection.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

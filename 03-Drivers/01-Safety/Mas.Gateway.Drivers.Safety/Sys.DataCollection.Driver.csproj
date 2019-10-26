@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6320697E-E1BA-4F46-A81C-A18234CD6377}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sys.DataCollection.Drivers.Safety</RootNamespace>
+    <AssemblyName>Sys.DataCollection.Drivers.Safety</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\02-DataCollection\Sys.DataCollection.ConsoleServer\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basic.Framework">
+      <HintPath>..\..\..\01-Library\Basic.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Base\UplinkCommand.cs" />
+    <Compile Include="Commands\Base\DownlinkCommand.cs" />
+    <Compile Include="Commands\BatteryRealDataRequestCommand.cs" />
+    <Compile Include="Commands\BatteryRealDataResponseCommand.cs" />
+    <Compile Include="Commands\CallPersonRequestCommand.cs" />
+    <Compile Include="Commands\DeviceControlRequestCommand.cs" />
+    <Compile Include="Commands\DeviceControlResponseCommand.cs" />
+    <Compile Include="Commands\GetSwitchboardParamCommRequestCommand.cs" />
+    <Compile Include="Commands\GetSwitchboardParamCommResponseCommand.cs" />
+    <Compile Include="Commands\InitializeRequestCommand.cs" />
+    <Compile Include="Commands\InitializeResponseCommand.cs" />
+    <Compile Include="Commands\ModificationDeviceAdressRequestCommand.cs" />
+    <Compile Include="Commands\ModificationDeviceAdressResponseCommand.cs" />
+    <Compile Include="Commands\QueryHistoryControlResponseCommand.cs" />
+    <Compile Include="Commands\QueryHistoryRealDataRequestCommand.cs" />
+    <Compile Include="Commands\QueryHistoryRealDataResponseCommand.cs" />
+    <Compile Include="Commands\RealDataResponseCommand.cs" />
+    <Compile Include="Commands\ResetDeviceRequestCommand.cs" />
+    <Compile Include="Commands\ResetDeviceResponseCommand.cs" />
+    <Compile Include="Commands\SetSensorGradingAlarmRequestCommand.cs" />
+    <Compile Include="Commands\SetSensorGradingAlarmResponseCommand.cs" />
+    <Compile Include="Commands\StationUpdate\GetStationUpdateStateRequestCommand.cs" />
+    <Compile Include="Commands\StationUpdate\GetStationUpdateStateResponseCommand.cs" />
+    <Compile Include="Commands\StationUpdate\InspectionRequestCommand.cs" />
+    <Compile Include="Commands\StationUpdate\InspectionResponseCommand.cs" />
+    <Compile Include="Commands\StationUpdate\ReductionRequestCommand.cs" />
+    <Compile Include="Commands\StationUpdate\ReductionResponseCommand.cs" />
+    <Compile Include="Commands\StationUpdate\RestartRequestCommand.cs" />
+    <Compile Include="Commands\StationUpdate\RestartResponseCommand.cs" />
+    <Compile Include="Commands\StationUpdate\SendUpdateBufferRequestCommand.cs" />
+    <Compile Include="Commands\StationUpdate\StationUpdateRequestCommand.cs" />
+    <Compile Include="Commands\StationUpdate\StationUpdateResponseCommand.cs" />
+    <Compile Include="Commands\StationUpdate\UpdateCancleRequestCommand.cs" />
+    <Compile Include="Commands\StationUpdate\UpdateCancleResponseCommand.cs" />
+    <Compile Include="Commands\TimeSynchronizationRequestCommand.cs" />
+    <Compile Include="Driver\CacheKJ73N.cs" />
+    <Compile Include="Driver\CommandHelper.cs" />
+    <Compile Include="Commands\Base\KJ73NCommand.cs" />
+    <Compile Include="Driver\Net-8962\DeviceDataConrtol.cs" />
+    <Compile Include="Driver\Net-8962\NetCoreBllRealizer.cs" />
+    <Compile Include="Driver\Net-8962\MineNet8962Driver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Commands\QueryHistoryControlRequestCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\02-DataCollection\Sys.DataCollection.Common\Sys.DataCollection.Common.csproj">
+      <Project>{af651990-ad0b-487c-ac44-d45cc24973ab}</Project>
+      <Name>Sys.DataCollection.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
