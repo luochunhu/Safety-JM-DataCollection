@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sys.DataCollection.WebApi",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sys.DataCollection.WebApiAgent", "02-DataCollection\Sys.DataCollection.WebApiAgent\Sys.DataCollection.WebApiAgent.csproj", "{4F6D6359-400B-46C8-9685-EB0FE24BC766}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Communication.Components", "..\DC.Communication\DC.Communication.Components.csproj", "{A612852A-489D-4E3D-B5B3-CE9846199ED3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DC.Communication.Components", "DC.Communication\DC.Communication.Components.csproj", "{A612852A-489D-4E3D-B5B3-CE9846199ED3}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
